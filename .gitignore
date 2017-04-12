@@ -1,0 +1,14 @@
+testing/*
+css/*
+config.json
+JSOld/*
+*.sh
+*.js
+addPost.tsx
+*.pem
+tokenSecret.json
+bundle.js
+.*
+node_modules/*
+*.map
+js/*
