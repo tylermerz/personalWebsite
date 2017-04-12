@@ -49,4 +49,8 @@ export class PlasticTable extends React.Component<any, any> {
 
 ReactDOM.render(
     <PlasticTable repo="packingProblems" />,
-    document.getElementById('GUI'))
+    document.getElementById('packingProblems'))
+
+ReactDOM.render(
+    <PlasticTable repo="personalWebsite" />,
+    document.getElementById('personalWebsite'))
