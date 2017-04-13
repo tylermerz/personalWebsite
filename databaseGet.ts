@@ -18,6 +18,10 @@ export class postAdder {
 
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
 
 
             let query = client.query('SELECT username, email FROM users where id = 0', (err, result) => {
@@ -28,7 +32,10 @@ export class postAdder {
                     reject("Could not get user data.");
                 }
             });
-
+            query.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            });
             //clean up
             query.on('end', function (result) {
                 client.end();
@@ -72,7 +79,10 @@ export class userGetter {
 
             const client = new pg.Client(config);
             client.connect();
-
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query('SELECT salt,hashedpassword FROM users where username = $1', [username], (err, result) => {
                 if (result.rows != undefined) {
                     this.userData = result.rows[0];
@@ -95,7 +105,10 @@ export class userGetter {
 
             const client = new pg.Client(config);
             client.connect();
-
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
 
             let query = client.query('SELECT username, email FROM users where id = $1', [this.userID], (err, result) => {
                 if (result.rows != undefined) {
@@ -131,6 +144,10 @@ export class blogPostGetter {
         return new Promise((resolve, reject) => {
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            });
             let tags: Array<string> = [];
             let counts: Array<number> = [];
             let maxCounts: number = 0;
@@ -156,6 +173,10 @@ export class blogPostGetter {
                         reject("No tags for that post");
                     }
                 });
+            query.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            });
             //clean up
             query.on('end', function (result) {
                 client.end();
@@ -167,6 +188,10 @@ export class blogPostGetter {
             //set up all of the variables and objects to make a query
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query(`SELECT posts.id AS id, posts.posterid, posts.time, posts.title, posts.postbody, users.email, users.username 
                                     FROM posts LEFT OUTER JOIN users ON (posts.posterid = users.id) 
                                     WHERE posts.id = $1`, [this.postID], (err, result) => {
@@ -212,6 +237,10 @@ export class blogPageGetter {
             //set up all of the variables and objects to make a query
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query('SELECT COUNT(*) FROM posts', (err, result) => {
                 if (result.rows.length != 0) {
                     this.totalPages = Math.ceil(Number(result.rows[0]["count"]) / this.numberOfPostsPerPage);
@@ -238,6 +267,10 @@ export class blogPageGetter {
             //set up all of the variables and objects to make a query
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query(`SELECT posts.posterid, posts.id, posts.time, posts.postsummary, posts.title, posts.postbody, users.email, users.username 
                                     FROM posts LEFT OUTER JOIN users ON (posts.posterid = users.id) 
                                     ORDER BY posts.time DESC LIMIT $1 OFFSET $2`, [this.numberOfPostsPerPage, this.numberOfPostsPerPage * this.pageNumber], (err, result) => {
@@ -279,6 +312,7 @@ export class blogPageGetter {
             }).catch(reason => {
                 reject("Couldn't get tags.");
             });
+
         });
     };
 
@@ -288,6 +322,10 @@ export class blogPageGetter {
             //set up all of the variables and objects to make a query
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query(`SELECT po.posterid,po.id, po.time, po.postsummary, po.title, po.postbody, users.id as uid, users.email, users.username 
                                     FROM (SELECT p1.posterid AS PID, p1.id, p1.time, p1.title, p1.posterid, p1.postbody, p1.postsummary 
                                             FROM tags LEFT OUTER JOIN posts p1 on (tags.postid = p1.id) WHERE tag = $1) po 
@@ -318,6 +356,10 @@ export class blogPageGetter {
             //set up all of the variables and objects to make a query
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query('SELECT COUNT(*) from tags where tag = $1', [tag], (err, result) => {
                 if (result.rows.length != 0) {
                     this.totalPages = Math.ceil(Number(result.rows[0]["count"]) / this.numberOfPostsPerPage);
