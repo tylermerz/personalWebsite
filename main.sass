@@ -1,13 +1,15 @@
-$font-stack:    'Open Sans', sans-serif
-$secondFont: 'Open Sans'
+$font-stack:    'Open Sans Condensed', sans-serif
+$secondFont: $secondFont
 $primary-color: #014437 
 $maxWidth: 700px
 $smallScreenWidth: 400px
 
 body
-  font: 100% $font-stack
+  font: 110% $font-stack
   color: $primary-color
   background-color: #ffffff
+  p
+    margin-left: 10px
   div.plasticTable
     font-size: 75%
   hr
@@ -18,7 +20,7 @@ body
     border-bottom: 1px solid #ccc
     background: #999
   div.titleBar
-    font-family: 'Permanent Marker' 
+    font-family: $secondFont 
     text-align: left
     margin-top: 20px
     letter-spacing: 5px
@@ -32,7 +34,6 @@ body
     margin-right: auto
     line-height: 75%
     span
-      font-family: 'Press Start 2P'
       margin-left: 5%
       font-size: 25%
       letter-spacing: 5px
@@ -70,6 +71,8 @@ body
     margin-right: auto
   h1
     font-family: $secondFont
+  h3
+    font-family: $secondFont
   h2
     font-family: $secondFont
     font-size: 150%
@@ -80,8 +83,8 @@ body
       font-size: 75%
       font-style: italic
   div.navBar
-    font-size: 200%
-    font-family: "Permanent Marker"
+    font-size: 100%
+    font-family: $secondFont
     @media screen and (max-width: $smallScreenWidth)
       font-size: 175%
     
@@ -214,8 +217,6 @@ body
       padding-left: 5px
       padding-right: 5px
   div.postHead
-    padding-left: 10px
-    padding-right: 10px
     display: inline-flex
     width: 100%
     display: flex

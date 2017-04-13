@@ -11,22 +11,7 @@ class DefaultLayout extends React.Component {
             name='keywords'
             content='Tyler Merz, engineering, node, python, web-dev, computer science, algorithm' /> {this.props.description !== undefined && <meta name='description' content={this.props.description} />}
           <title>{this.props.title + ' - Tyler Merz'}</title>
-          <link
-            rel='stylesheet'
-            type='text/css'
-            href='https://fonts.googleapis.com/css?family=Open+Sans' />
-          <link
-            rel='stylesheet'
-            type='text/css'
-            href='https://fonts.googleapis.com/css?family=Trirong' />
-          <link
-            rel='stylesheet'
-            type='text/css'
-            href='https://fonts.googleapis.com/css?family=Press+Start+2P' />
-          <link
-            rel='stylesheet'
-            type='text/css'
-            href='https://fonts.googleapis.com/css?family=Permanent+Marker' />
+          <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Economica' rel='stylesheet' />
           <link rel='stylesheet' href='http://tylermerz.com/main.css' />
           <link rel='stylesheet' href='http://tylermerz.com/tomorrow.css' />
           <link rel='stylesheet' href='http://tylermerz.com/react-table.css' />
@@ -40,10 +25,8 @@ class DefaultLayout extends React.Component {
         <body>
           <div className='titleBar'>
             <b>
-              TYLER MERZ</b><br />
-            <span className='siteSubtitle'>
-              <b>Engineering. Hobbies. Blogging.</b>
-            </span>
+              TYLER MERZ</b>
+            <span className='siteSubtitle' />
           </div>
           <div className='navBar'>
             <div className='navButton'>
