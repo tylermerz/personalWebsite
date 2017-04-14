@@ -1,6 +1,8 @@
 # personalWebsite
 This is repository hosts the code with which I run my own personal/professional website. The website consists of a few hardcoded pages about myself and some of my own personal projects and then also a blog on which I intend to post small snippets of code which I find interesting or useful about my projects.  
 
+My own rendition of this website can be found [here](http://tylermerz.com).
+
 ## Installation and Usage
 ### Installation
 To install this project clone the repository and then use npm to install the dependencies:

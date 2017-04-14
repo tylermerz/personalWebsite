@@ -7,6 +7,10 @@ All of the code for these projects as well as other projects can be found on [my
 
 ## personalWebsite
 
+<figure>
+<a href="http://tylermerz.com/images/websiteSH.png" data-lightbox="image-1" data-title="Screen shot of my personal website."><img class='preview' src="http://tylermerz.com/images/websiteSH.png" /></a>
+    <figcaption>Screen shot of my personal website.</figcaption>
+</figure>
 The website that you are viewing right now is certainly one of my most visible projects. Obviously there are many mature website platforms to use, but none of those served my purpose of learning new&mdash;to me&mdash;web technologies ahead of an internship. I reinvented the wheel so that I could familiarize myself with node.js, postgres, and React.
 
 [Blog posts about personalWebsite](/blog/tags/personalWebsite/page/0).
@@ -17,14 +21,20 @@ The website that you are viewing right now is certainly one of my most visible p
 
 ---
 
-## packingProblems
+## packingProblem
+
+<figure>
+<a href="http://tylermerz.com/images/pTreeExample.png" data-lightbox="image-2" data-title="Example of tree data structure which abstracts 2D bin."><img class='preview' src="http://tylermerz.com/images/pTreeExample.png" /></a>
+    <figcaption>Example of tree data structure which abstracts 2D bin.</figcaption>
+</figure>
 
 This project uses Typescript primarily (but there is a bit of React for various GUIs) to explore different algorithms which are used to pack items of various sizes into an larger bins. The basic algorithm ideas were taken from [Handbook of Approximation Algorithms and Metaheuristics](https://www.crcpress.com/Handbook-of-Approximation-Algorithms-and-Metaheuristics/Gonzalez/p/book/9781584885504), but the specific implementation is my own.
 
 I programmed both 1D and 2D bin packing algorithms because of my interest in laying out patterns on lumber for building projects and efficient packing of plants into raised garden beds, respectively.
 
-[Blog posts about packingProblems](/blog/tags/packingProblems/page/0).
+(*Coming Soon*) Blog posts about packingProblems.
 
 [Github activity](https://github.com/tylermerz/packingProblems):
 
 <div class='plasticTable' id='packingProblems' />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox-plus-jquery.min.js'></script>

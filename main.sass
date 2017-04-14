@@ -1,5 +1,5 @@
 $font-stack:    'Open Sans Condensed', sans-serif
-$secondFont: $secondFont
+$secondFont: 'Economica' 
 $primary-color: #014437 
 $maxWidth: 700px
 $smallScreenWidth: 400px
@@ -165,6 +165,18 @@ body
     flex-wrap: wrap
     order: 2
     flex: 1 1 auto
+    figure
+      width: 75%
+      @media screen and (max-width: $smallScreenWidth)
+        width: 90%
+      margin-left: auto
+      margin-right: auto
+      text-align: center
+      font-style: italic
+      img
+        max-width: 100%
+        max-height: 200px
+     
 
     div.chart
       padding: 1%

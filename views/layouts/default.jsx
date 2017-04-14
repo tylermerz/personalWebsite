@@ -15,6 +15,7 @@ class DefaultLayout extends React.Component {
           <link rel='stylesheet' href='http://tylermerz.com/main.css' />
           <link rel='stylesheet' href='http://tylermerz.com/tomorrow.css' />
           <link rel='stylesheet' href='http://tylermerz.com/react-table.css' />
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
           <script
             src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js' />
           <script>
