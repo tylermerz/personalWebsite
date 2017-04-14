@@ -2,10 +2,18 @@ var React = require('react');
 let express = require('express');
 let app = express();
 let helmet = require('helmet');
+let morgan = require('morgan');
+let fs = require('fs');
+let path = require('path');
 import { blogPostGetter, blogPageGetter } from "./databaseGet";
 import { searchInterface } from "./searchInterface";
 //security packages and middleware
 
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'})
+
+// setup the logger
+app.use(morgan('combined', {stream: accessLogStream}))
 app.use(helmet());
 
 //express setup to use handlebars
@@ -25,7 +33,12 @@ app.get('/proj', function (req, res) {
 
 //register the blogging behavior
 app.get('/blog/page/:pageID', function (req, res) {
-    let BPG: blogPageGetter = new blogPageGetter(Number(req.params.pageID));
+    //make sure that the pageID is a valid number
+    let pageID = 0;
+    if (Number.isInteger(req.params.pageID) === true && req.params.pageID >= 0){
+        pageID = req.params.pageID;
+    } 
+    let BPG: blogPageGetter = new blogPageGetter(Number(pageID));
     let blogDataPromise: Promise<Array<Object>> = BPG.getPage();
     let blogTotalPagesPromise: Promise<Array<Object>> = BPG.getTotalPages();
     Promise.all([blogDataPromise, blogTotalPagesPromise]).then(blogData => BPG.getTagsForPage()).then(blogData => {
@@ -48,7 +61,12 @@ app.get('/blog/', function (req, res) {
 });
 
 app.get('/blog/post/:postID', function (req, res) {
-    let BPG: blogPostGetter = new blogPostGetter(Number(req.params.postID));
+    //make sure that the postID is a valid number
+    let postID = 0;
+    if (Number.isInteger(req.params.postID) === true && req.params.postID >= 0){
+        postID = req.params.postID;
+    } 
+    let BPG: blogPostGetter = new blogPostGetter(Number(postID));
     let post: Promise<Object> = BPG.getPost();
     let tags: Promise<Object> = BPG.getTags();
     Promise.all([tags, post]).then(blogData => {
@@ -60,7 +78,11 @@ app.get('/blog/post/:postID', function (req, res) {
 
 //register the blogging behavior
 app.get('/blog/tags/:tag/page/:pageID', function (req, res) {
-    let BPG: blogPageGetter = new blogPageGetter(Number(req.params.pageID));
+    let pageID = 0;
+    if (Number.isInteger(req.params.pageID) === true && req.params.pageID >= 0){
+        pageID = req.params.pageID;
+    }
+    let BPG: blogPageGetter = new blogPageGetter(Number(pageID));
     let blogDataPromise: Promise<Array<Object>> = BPG.getTagPage(req.params.tag);
     let blogTotalPagesPromise: Promise<Array<Object>> = BPG.getTotalTagPages(req.params.tag);
     Promise.all([blogDataPromise, blogTotalPagesPromise]).then(blogData => BPG.getTagsForPage()).then(blogData => {
@@ -82,6 +104,12 @@ app.get('/search/', function (req, res) {
     });
 });
 
+
+//handle default requests
+app.all('*', function (req, res) {
+    res.render('infoPage', { message: "That page could not be found." });
+});
+
 app.listen(8080, function () {
     console.log('Example app listening on port 8080!');
-})
+});
