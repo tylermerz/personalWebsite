@@ -10,7 +10,7 @@ class BlogPostClass extends React.Component {
         <hr />
         <div className='tags'> {tags}</div>
         <div className='postMeat'>
-          <div className='postHead'><h2><a href={'/blog/post/' + this.props.id} > {this.props.title}</a> <span className='subtitle'>on {this.props.time.toString().slice(0, -18)} by <a href='/about/'> {this.props.username}</a></span></h2></div>
+          <div className='postHead'><h1><a href={'/blog/post/' + this.props.id} > {this.props.title}</a> <span className='subtitle'>on {this.props.time.toString().slice(0, -18)} by <a href='/about/'> {this.props.username}</a></span></h1></div>
           { (this.props.postsummary === undefined || this.props.postsummary === null || this.props.postsummary.length === 0)
             ? (<div className='postBody' dangerouslySetInnerHTML={{ __html: this.props.postbody }} />)
             : (<div className='postBody' dangerouslySetInnerHTML={{ __html: this.props.postsummary }} />)
