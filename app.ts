@@ -23,7 +23,6 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 //Here we are configuring express to use body-parser as middle-ware.
 var bodyParser = require("body-parser");
-
 app.get(['/about', '/'], function (req, res) {
     res.render('about', {});
 });
@@ -94,7 +93,12 @@ app.get('/blog/tags/:tag/page/:pageID', function (req, res) {
 
 //register the blogging behavior
 app.get('/search/', function (req, res) {
-    let searchInter = new searchInterface(req.query.query);
+    //limit the max search length
+    let query = "";
+    if (req.query.query !== undefined){
+        query = req.query.query.slice(0,256);
+    }
+    let searchInter = new searchInterface(query);
     let tagSearchPromise = searchInter.searchTags();
     let postSearchPromise = searchInter.searchPosts();
     Promise.all([tagSearchPromise, postSearchPromise]).then(searchData => {

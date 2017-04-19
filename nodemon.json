@@ -1,0 +1,9 @@
+{
+    "verbose": true,
+    "execMap": {
+    "ts": "tsc"
+  },
+    "ignore": [
+        "*.log"
+    ]
+}

@@ -40,10 +40,11 @@ class DefaultLayout extends React.Component {
               <a href='/blog/'>BLOG</a>
             </div>
             <div className='searchBar'>
-              <form action='/search/' method='get'><input className='search' type='search' name='query' placeholder='search...' /></form>
+              <form action='/search/' method='get'><input className='search' type='search' name='query' maxLength={256} placeholder='search...' /></form>
             </div>
           </div>
           {this.props.children}
+          <div className='footer'><p>&copy; 2017 Tyler Merz</p></div>
         </body>
       </html>
     )
