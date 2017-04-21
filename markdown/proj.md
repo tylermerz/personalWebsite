@@ -37,4 +37,3 @@ I programmed both 1D and 2D bin packing algorithms because of my interest in lay
 [Github activity](https://github.com/tylermerz/packingProblems):
 
 <div class='plasticTable' id='packingProblems' />
-<script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox-plus-jquery.min.js'></script>

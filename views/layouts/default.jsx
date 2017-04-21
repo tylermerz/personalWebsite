@@ -44,6 +44,7 @@ class DefaultLayout extends React.Component {
             </div>
           </div>
           {this.props.children}
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox-plus-jquery.min.js'></script>
           <div className='footer'><p>&copy; 2017 Tyler Merz</p></div>
         </body>
       </html>
