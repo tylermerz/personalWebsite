@@ -8,7 +8,7 @@ All of the code for these projects as well as other projects can be found on [my
 ## personalWebsite
 
 <figure>
-<a href="http://tylermerz.com/images/websiteSH.png" data-lightbox="image-1" data-title="Screen shot of my personal website."><img class='preview' src="http://tylermerz.com/images/websiteSH.png" /></a>
+<a href="http://static.tylermerz.com/images/websiteSH.png" data-lightbox="image-1" data-title="Screen shot of my personal website."><img class='preview' src="http://static.tylermerz.com/images/websiteSH.png" /></a>
     <figcaption>Screen shot of my personal website.</figcaption>
 </figure>
 The website that you are viewing right now is certainly one of my most visible projects. Obviously there are many mature website platforms to use, but none of those served my purpose of learning new&mdash;to me&mdash;web technologies ahead of an internship. I reinvented the wheel so that I could familiarize myself with node.js, postgres, and React.
@@ -24,7 +24,7 @@ The website that you are viewing right now is certainly one of my most visible p
 ## packingProblem
 
 <figure>
-<a href="http://tylermerz.com/images/pTreeExample.png" data-lightbox="image-2" data-title="Example of tree data structure which abstracts 2D bin."><img class='preview' src="http://tylermerz.com/images/pTreeExample.png" /></a>
+<a href="http://static.tylermerz.com/images/pTreeExample.png" data-lightbox="image-2" data-title="Example of tree data structure which abstracts 2D bin."><img class='preview' src="http://static.tylermerz.com/images/pTreeExample.png" /></a>
     <figcaption>Example of tree data structure which abstracts 2D bin.</figcaption>
 </figure>
 

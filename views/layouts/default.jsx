@@ -12,16 +12,17 @@ class DefaultLayout extends React.Component {
             content='Tyler Merz, engineering, node, python, web-dev, computer science, algorithm' /> {this.props.description !== undefined && <meta name='description' content={this.props.description} />}
           <title>{this.props.title + ' - Tyler Merz'}</title>
           <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Economica' rel='stylesheet' />
-          <link rel='stylesheet' href='http://tylermerz.com/main.css' />
-          <link rel='stylesheet' href='http://tylermerz.com/tomorrow.css' />
-          <link rel='stylesheet' href='http://tylermerz.com/react-table.css' />
+          <link rel='stylesheet' href='http://static.tylermerz.com/main.css' />
+          <link rel='stylesheet' href='http://static.tylermerz.com/tomorrow.css' />
+          <link rel='stylesheet' href='http://static.tylermerz.com/react-table.css' />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
           <script
             src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js' />
           <script>
             hljs.initHighlightingOnLoad();
           </script>
-          <script src='http://tylermerz.com/JS/Chart.bundle.js' />
+          <script src='http://static.tylermerz.com/JS/Chart.bundle.js' />
+          <script src='http://static.tylermerz.com/JS/analytics.js' />
         </head>
         <body>
           <div className='titleBar'>
