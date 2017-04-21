@@ -21,4 +21,4 @@ My LinkedIn profile can be found [here](https://www.linkedin.com/in/tyler-merz-5
 * Barry M. Goldwater Scholarship
 
 
-My full CV can be downloaded [here](http://tylermerz.com/TAMerzCV.pdf).
+My full CV can be downloaded [here](http://static.tylermerz.com/TAMerzCV.pdf).
