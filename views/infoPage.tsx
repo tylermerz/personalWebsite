@@ -1,7 +1,7 @@
-var React = require('react')
-var DefaultLayout = require('./layouts/default')
+import * as React from 'react';
+import {DefaultLayout} from './layouts/default';
 
-class InfoPage extends React.Component {
+export default class InfoPage extends React.Component<any,any> {
   render () {
     return (
       <DefaultLayout title={this.props.message} >
@@ -20,4 +20,3 @@ class InfoPage extends React.Component {
     )
   }
 }
-module.exports = InfoPage

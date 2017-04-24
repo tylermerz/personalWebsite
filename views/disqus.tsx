@@ -1,6 +1,6 @@
-var React = require('react')
+import * as React from 'react';
 
-class Disqus extends React.Component {
+export class Disqus extends React.Component<any,any> {
   render () {
     return (
       <div className='disqus'>
@@ -12,4 +12,3 @@ class Disqus extends React.Component {
   }
 }
 
-module.exports = Disqus

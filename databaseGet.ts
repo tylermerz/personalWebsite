@@ -240,7 +240,7 @@ export class blogPageGetter {
             client.on('error', function (error) {
                 console.log(error);
                 reject(error);
-            })
+            });
             let query = client.query('SELECT COUNT(*) FROM posts', (err, result) => {
                 if (result.rows.length != 0) {
                     this.totalPages = Math.ceil(Number(result.rows[0]["count"]) / this.numberOfPostsPerPage);

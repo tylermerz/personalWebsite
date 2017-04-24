@@ -1,5 +1,5 @@
-import * as React from 'react'
-class DefaultLayout extends React.Component {
+import * as React from 'react';
+export class DefaultLayout extends React.Component<any,any> {
   render () {
     return (
       <html>
@@ -52,4 +52,3 @@ class DefaultLayout extends React.Component {
     )
   }
 }
-module.exports = DefaultLayout

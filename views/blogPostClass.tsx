@@ -1,10 +1,11 @@
-var React = require('react')
+import * as React from 'react';
 
-class BlogPostClass extends React.Component {
+export class BlogPostClass extends React.Component<any,any>{
   render () {
     var tags = this.props.tags.map((t, i) => {
       return <span style={{ fontSize: +(this.props.tagCounts[i] - this.props.minTagCounts + 1) / (this.props.maxTagCounts - this.props.minTagCounts) * 75 + 25 + '%' }} key={i}><a className='tag' href={'/blog/tags/' + t + '/page/0'}> {t}</a> </span>
     })
+    let summaryWithLink = this.props.postsummary + "<p><em><a href='/blog/post/" + this.props.id.toString()+"'>Read more...</a></em></p>";
     return (
       <div className='mainBody'>
         <hr />
@@ -13,7 +14,7 @@ class BlogPostClass extends React.Component {
           <div className='postHead'><h1><a href={'/blog/post/' + this.props.id} > {this.props.title}</a> <span className='subtitle'>on {this.props.time.toString().slice(0, -18)} by <a href='/about/'> {this.props.username}</a></span></h1></div>
           { (this.props.postsummary === undefined || this.props.postsummary === null || this.props.postsummary.length === 0)
             ? (<div className='postBody' dangerouslySetInnerHTML={{ __html: this.props.postbody }} />)
-            : (<div className='postBody' dangerouslySetInnerHTML={{ __html: this.props.postsummary }} />)
+            : (<div className='postBody' dangerouslySetInnerHTML={{ __html: summaryWithLink}} />)
         }
         </div>
         { this.props.post &&
@@ -32,4 +33,3 @@ class BlogPostClass extends React.Component {
   }
 }
 
-module.exports = BlogPostClass

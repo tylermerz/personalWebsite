@@ -1,8 +1,8 @@
-var React = require('react')
-var DefaultLayout = require('./layouts/default')
-var BlogPostClass = require('./blogPostClass')
-var Disqus = require('./disqus')
-class blogPostPage extends React.Component {
+import * as React from 'react';
+import {DefaultLayout} from './layouts/default';
+import {BlogPostClass} from './blogPostClass';
+import {Disqus} from './disqus';
+export default class blogPostPage extends React.Component<any,any> {
   render () {
     return (
       <DefaultLayout title={this.props.title} description={this.props.postsummary}>
@@ -13,4 +13,3 @@ class blogPostPage extends React.Component {
   }
 }
 
-module.exports = blogPostPage

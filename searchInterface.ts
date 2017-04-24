@@ -15,10 +15,12 @@ export class searchInterface {
         return new Promise((resolve,reject) =>{
             const client = new pg.Client(config);
             client.connect();
-
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
             let query = client.query('SELECT DISTINCT tag FROM tags WHERE soundex(tag) = soundex($1)', [this.query], (err, result) => {
                 if (result.rows != undefined) {
-                    console.log(result.rows);
                     this.searchData["tagResults"] = result.rows;
                     resolve(result.rows);
                 } else {
@@ -37,6 +39,10 @@ export class searchInterface {
         return new Promise((resolve,reject) =>{
             const client = new pg.Client(config);
             client.connect();
+            client.on('error', function (error) {
+                console.log(error);
+                reject(error);
+            })
 
             let query = client.query("SELECT ts_headline((postbody||title||postsummary),phraseto_tsquery($1),'MaxWords=35, MinWords=15, ShortWord=3,FragmentDelimiter=...,StartSel=<u>,StopSel=</u>') as clip,id,title, ts_rank_cd(to_tsvector(postbody||title||postsummary),phraseto_tsquery($1)) as rank FROM posts WHERE phraseto_tsquery($1) @@ to_tsvector(postbody||title||postsummary) = true ORDER BY rank DESC limit 10", [this.query], (err, result) => {
                 if (result.rows != undefined) {

@@ -1,9 +1,9 @@
-var React = require('react')
-var DefaultLayout = require('./layouts/default')
+import * as React from 'react';
+import {DefaultLayout} from './layouts/default';
 var ReactMarkdown = require('react-markdown')
 var fs = require('fs')
 
-class AboutMe extends React.Component {
+export default class AboutMe extends React.Component<any,any> {
   render () {
     var innerMarkDown = fs.readFileSync('./markdown/about.md').toString('utf-8')
     return (
@@ -20,4 +20,3 @@ class AboutMe extends React.Component {
     )
   }
 }
-module.exports = AboutMe

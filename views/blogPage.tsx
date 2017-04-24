@@ -1,9 +1,9 @@
-var React = require('react')
-var DefaultLayout = require('./layouts/default')
-var BlogPostClass = require('./blogPostClass')
-var Pager = require('./pager')
+import * as React from 'react';
+import {DefaultLayout} from './layouts/default';
+import {BlogPostClass} from './blogPostClass';
+import {Pager} from './pager';
 
-class blogPage extends React.Component {
+export default class blogPage extends React.Component<any,any> {
   render () {
     var content = this.props.posts.map((post, i) => {
       return (
@@ -21,4 +21,3 @@ class blogPage extends React.Component {
   }
 }
 
-module.exports = blogPage

@@ -1,7 +1,7 @@
-var React = require('react')
-var DefaultLayout = require('./layouts/default')
+import * as React from 'react';
+import {DefaultLayout} from './layouts/default';
 
-class searchPage extends React.Component {
+export default class searchPage extends React.Component<any,any> {
   render () {
     var postSummaries = this.props.searchResults.postResults.map((post, i) => {
       return (<li key={i}><a href={'/blog/post/' + post['id']}><span dangerouslySetInnerHTML={{ __html: post['title'] }} /></a><br /> <blockquote dangerouslySetInnerHTML={{ __html: post['clip'] }} /></li>)
@@ -35,4 +35,3 @@ class searchPage extends React.Component {
   }
 }
 
-module.exports = searchPage

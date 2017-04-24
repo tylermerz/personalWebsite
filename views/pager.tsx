@@ -1,6 +1,6 @@
-var React = require('react')
+import * as React from 'react';
 
-class Pager extends React.Component {
+export class Pager extends React.Component<any,any> {
     // we are guaranteed to get some number of pages > 0 if we are calling this class.
   render () {
     var pageNumbers = []
@@ -31,4 +31,3 @@ class Pager extends React.Component {
     )
   }
 }
-module.exports = Pager

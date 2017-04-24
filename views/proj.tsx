@@ -1,9 +1,9 @@
-var React = require('react')
-var DefaultLayout = require('./layouts/default')
+import * as React from 'react';
+import {DefaultLayout} from './layouts/default';
 var ReactMarkdown = require('react-markdown')
 var fs = require('fs')
 
-class Proj extends React.Component {
+export default class Proj extends React.Component<any,any> {
   render () {
     var innerMarkDown = fs.readFileSync('./markdown/proj.md').toString('utf-8')
     return (
@@ -13,7 +13,7 @@ class Proj extends React.Component {
             <div className='postBody'>
               <hr />
               <ReactMarkdown source={innerMarkDown} />
-              <script src='http://tylermerz.com/JS/PlasticTableBundle.js' type='text/javascript' />
+              <script src='http://static.tylermerz.com/JS/PlasticTableBundle.js' type='text/javascript' />
             </div>
           </div>
         </div>
@@ -21,4 +21,3 @@ class Proj extends React.Component {
     )
   }
 }
-module.exports = Proj
