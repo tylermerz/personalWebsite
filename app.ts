@@ -34,7 +34,7 @@ app.get('/proj', function (req, res) {
 app.get('/blog/page/:pageID', function (req, res) {
     //make sure that the pageID is a valid number
     let pageID = 0;
-    if (Number.isInteger(req.params.pageID) === true && req.params.pageID >= 0){
+    if (Number.isInteger(Number(req.params.pageID)) === true && Number(req.params.pageID) >= 0){
         pageID = req.params.pageID;
     } 
     let BPG: blogPageGetter = new blogPageGetter(Number(pageID));
@@ -62,7 +62,7 @@ app.get('/blog/', function (req, res) {
 app.get('/blog/post/:postID', function (req, res) {
     //make sure that the postID is a valid number
     let postID = 0;
-    if (Number.isInteger(req.params.postID) === true && req.params.postID >= 0){
+    if (Number.isInteger(Number(req.params.postID)) === true && Number(req.params.postID) >= 0){
         postID = req.params.postID;
     } 
     let BPG: blogPostGetter = new blogPostGetter(Number(postID));
@@ -78,7 +78,7 @@ app.get('/blog/post/:postID', function (req, res) {
 //register the blogging behavior
 app.get('/blog/tags/:tag/page/:pageID', function (req, res) {
     let pageID = 0;
-    if (Number.isInteger(req.params.pageID) === true && req.params.pageID >= 0){
+    if (Number.isInteger(Number(req.params.pageID)) === true && Number(req.params.pageID) >= 0){
         pageID = req.params.pageID;
     }
     let BPG: blogPageGetter = new blogPageGetter(Number(pageID));

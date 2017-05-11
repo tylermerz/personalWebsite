@@ -15,9 +15,9 @@ export class DefaultLayout extends React.Component<any,any> {
           <link rel='stylesheet' href='http://static.tylermerz.com/main.css' />
           <link rel='stylesheet' href='http://static.tylermerz.com/tomorrow.css' />
           <link rel='stylesheet' href='http://static.tylermerz.com/react-table.css' />
+          <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
-          <script
-            src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js' />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" />
           <script>
             hljs.initHighlightingOnLoad();
           </script>
