@@ -47,7 +47,7 @@ To create the tags table:
 
 CREATE TABLE public.tags
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('tags_id'::regclass),
     tag text COLLATE pg_catalog."default" NOT NULL,
     postid integer NOT NULL,
     CONSTRAINT tags_pkey PRIMARY KEY (id)
@@ -58,7 +58,7 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public.tags
-    OWNER to username;
+    OWNER to tylermerz;
 ```
 
 And finally the users table:
