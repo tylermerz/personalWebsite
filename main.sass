@@ -59,10 +59,14 @@ body
   a:active 
     color: lavender 
   pre
+    overflow: auto
     border: 1px gray solid
     width: 75%
+    overflow: auto
+    word-wrap: normal
+    white-space: pre
     @media screen and (max-width: $smallScreenWidth)
-      width: 100%
+      width: 90vw
     margin-left: auto
     margin-right: auto
   h1
@@ -165,7 +169,7 @@ body
     figure
       width: 75%
       @media screen and (max-width: $smallScreenWidth)
-        width: 90%
+        width: 90vw
       margin-left: auto
       margin-right: auto
       text-align: center
@@ -179,13 +183,15 @@ body
       padding: 1%
       width: 75%
       @media screen and (max-width: $smallScreenWidth)
-        width: 90%
+        width: 90vw
       margin-left: auto
       margin-right: auto
       border: solid gray 1px
 
   div.tags
     width: 100%
+    @media screen and (max-width: $smallScreenWidth)
+      font-size: 75%
     flex: 1 0 auto
     display: inline-flex
     padding-right: 5px
