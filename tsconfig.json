@@ -13,6 +13,8 @@
     "include": [
         "app.ts",
         "databaseGet.ts",
-        "views/**/*.tsx"
+	"feeder.ts",
+        "views/**/*.tsx",
+        "views/layouts/*.tsx"
     ]
 }

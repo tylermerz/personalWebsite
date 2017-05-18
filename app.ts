@@ -7,6 +7,8 @@ let fs = require('fs');
 let path = require('path');
 import { blogPostGetter, blogPageGetter } from "./databaseGet";
 import { searchInterface } from "./searchInterface";
+import {feeder} from "./feeder";
+let feed = new feeder();
 //security packages and middleware
 
 // create a write stream (in append mode)
@@ -30,6 +32,14 @@ app.get('/proj', function (req, res) {
     res.render('proj', {});
 });
 
+app.get('/blog/rss.xml', function (req, res) {
+    let feedPromise = feed.getFeed();
+    feedPromise.then(data=>{
+        res.send(data);
+    }).catch(error=>{
+        res.send("Could not get feed.");
+    });
+});
 //register the blogging behavior
 app.get('/blog/page/:pageID', function (req, res) {
     //make sure that the pageID is a valid number

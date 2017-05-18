@@ -38,7 +38,7 @@ export class DefaultLayout extends React.Component<any,any> {
               <a href='/proj/'>PROJECTS</a>
             </div>
             <div className='navButton'>
-              <a href='/blog/'>BLOG</a>
+              <a href='/blog/'>BLOG </a>
             </div>
             <div className='searchBar'>
               <form action='/search/' method='get'><input className='search' type='search' name='query' maxLength={256} placeholder='search...' /></form>
@@ -46,7 +46,7 @@ export class DefaultLayout extends React.Component<any,any> {
           </div>
           {this.props.children}
           <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox-plus-jquery.min.js' />
-          <div className='footer'><p>&copy; 2017 Tyler Merz</p></div>
+          <div className='footer'><p><a href='/blog/rss.xml'>RSS </a> &copy; 2017 Tyler Merz</p></div>
         </body>
       </html>
     )
