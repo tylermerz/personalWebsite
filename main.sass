@@ -2,7 +2,7 @@ $font-stack:    'Open Sans Condensed', sans-serif
 $secondFont: 'Economica' 
 $primary-color: #014437 
 $maxWidth: 700px
-$smallScreenWidth: 400px
+$smallScreenWidth: $maxWidth
 
 body
   font: 110% $font-stack
@@ -62,7 +62,7 @@ body
     overflow: auto
     border: 1px gray solid
     width: 75%
-    max-width: $maxWidth
+    max-width: 0.75*$maxWidth
     overflow: auto
     word-wrap: normal
     white-space: pre
@@ -89,7 +89,6 @@ body
     font-family: $secondFont
     @media screen and (max-width: $smallScreenWidth)
       font-size: 175%
-    
     align-items: flex-start
     display: flex
     justify-content: space-around
