@@ -8,10 +8,13 @@ My LinkedIn profile can be found [here](https://www.linkedin.com/in/tyler-merz-5
 
 ---
 
+## Employment
+* Software Engineering Intern - [Stride Software](https://www.getstride.com/) - 2017--Present
+
 ## Education
-* Ph.D. in Applied Physics - Stanford University - 2012-December 2017 (expected)
-* M.Phil. in Physics - University of Cambridge - 2011-2012
-* B.S. in Engineering Physics - Ohio State University - 2007-2011
+* Ph.D. in Applied Physics - Stanford University - 2012--December 2017 (expected)
+* M.Phil. in Physics - University of Cambridge - 2011--2012
+* B.S. in Engineering Physics - Ohio State University - 2007--2011
 
 
 ## Selected National Awards
