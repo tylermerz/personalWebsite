@@ -6,8 +6,6 @@ During the course of my Ph.D. work, I became much more serious about computer pr
 
 My LinkedIn profile can be found [here](https://www.linkedin.com/in/tyler-merz-571552124/) and I can be reached at tyler . merz at gmail dot com.
 
-–-
-
 ## Employment
 * Software Engineering Intern - [Stride Software](https://www.getstride.com/) - 2017–Present
 
