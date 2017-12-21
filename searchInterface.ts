@@ -1,6 +1,15 @@
 import * as pg from 'pg';
-let config = require("./config");
+let config = {
+    username: process.env.username,
+    database: process.env.database,
+    host: process.env.host,
+    port: 5432,
+    idelTimeoutMillis: 30000,
+};
 
+if (!config['username']){
+    config = require("./config"); 
+} 
 
 export class searchInterface {
     query:string;

@@ -1,7 +1,17 @@
 import * as pg from 'pg';
 const crypto = require('crypto');
-let config = require('./config');
+let config = {
+    username: process.env.username,
+    database: process.env.database,
+    host: process.env.host,
+    port: 5432,
+    idelTimeoutMillis: 30000,
+};
 
+if (!config['username']){
+    config = require("./config"); 
+} 
+console.log(config)
 
 export class postAdder {
     config: Object = {};
