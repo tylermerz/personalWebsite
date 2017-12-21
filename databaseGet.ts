@@ -11,7 +11,6 @@ let config = {
 if (!config['username']){
     config = require("./config"); 
 } 
-console.log(config)
 
 export class postAdder {
     config: Object = {};

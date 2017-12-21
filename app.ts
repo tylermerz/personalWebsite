@@ -124,6 +124,6 @@ app.all('*', function (req, res) {
     res.render('infoPage', { message: "That page could not be found." });
 });
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 8080, function () {
     console.log('Example app listening on port 8080!');
 });
