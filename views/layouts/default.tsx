@@ -12,10 +12,10 @@ export class DefaultLayout extends React.Component<any,any> {
             content='Tyler Merz, engineering, node, python, web-dev, computer science, algorithm' /> {this.props.description !== undefined && <meta name='description' content={this.props.description} />}
           <title>{this.props.title + ' - Tyler Merz'}</title>
           <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Economica' rel='stylesheet' />
-          <link rel='stylesheet' href='http://static.tylermerz.com/main.css' />
-          <link rel='stylesheet' href='http://static.tylermerz.com/tomorrow.css' />
-          <link rel='stylesheet' href='http://static.tylermerz.com/react-table.css' />
-          <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css" />
+          <link rel='stylesheet' href='https://s3-us-west-1.amazonaws.com/static.tylermerz.com/main.css' />
+          <link rel='stylesheet' href='https://s3-us-west-1.amazonaws.com/static.tylermerz.com/react-table.css' />
+          <link rel='stylesheet' href='https://s3-us-west-1.amazonaws.com/static.tylermerz.com/tomorrow.css' />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css" rel="stylesheet" />
           <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" />
           <script>
