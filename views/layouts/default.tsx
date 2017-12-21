@@ -21,8 +21,8 @@ export class DefaultLayout extends React.Component<any,any> {
           <script>
             hljs.initHighlightingOnLoad();
           </script>
-          <script src='http://static.tylermerz.com/JS/Chart.bundle.js' />
-          <script src='http://static.tylermerz.com/JS/analytics.js' />
+          <script src='https://s3-us-west-1.amazonaws.com/static.tylermerz.com/JS/Chart.bundle.js' />
+          <script src='https://s3-us-west-1.amazonaws.com/static.tylermerz.com/JS/analytics.js' />
         </head>
         <body>
           <div className='titleBar'>
