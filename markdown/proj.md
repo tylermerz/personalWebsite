@@ -15,7 +15,7 @@ The website that you are viewing right now is certainly one of my most visible p
 
 [Blog posts about personalWebsite](/blog/tags/personalWebsite/page/0).
 
-[Github activity](https://github.com/tylermerz/personalWebsite):
+[Recent Github activity](https://github.com/tylermerz/personalWebsite):
 
 <div class='plasticTable' id='personalWebsite' />
 
@@ -34,6 +34,6 @@ I programmed both 1D and 2D bin packing algorithms because of my interest in lay
 
 (*Coming Soon*) Blog posts about packingProblems.
 
-[Github activity](https://github.com/tylermerz/packingProblems):
+[Recent Github activity](https://github.com/tylermerz/packingProblems):
 
 <div class='plasticTable' id='packingProblems' />
