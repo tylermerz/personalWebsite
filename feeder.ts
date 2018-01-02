@@ -3,7 +3,7 @@ let defaultInfo = {
     title: "Tyler Merz's Blog",
     description: 'Feed associated with www.tylermerz.com/blog. Topics include technology, web development, and general computer science topics.',
     link: 'http://www.tylermerz.com',
-    image: 'http://static.tylermerz.com/tm.jpg',
+    image: 'https://s3-us-west-1.amazonaws.com/static.tylermerz.com/tm.jpg',
     copyright: 'All rights reserved 2017, Tyler Merz',
 
     author: {

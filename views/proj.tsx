@@ -13,7 +13,7 @@ export default class Proj extends React.Component<any,any> {
             <div className='postBody'>
               <hr />
               <ReactMarkdown source={innerMarkDown} />
-              <script src='http://static.tylermerz.com/JS/PlasticTableBundle.js' type='text/javascript' />
+              <script src='https://s3-us-west-1.amazonaws.com/static.tylermerz.com/JS/PlasticTableBundle.js' type='text/javascript' />
             </div>
           </div>
         </div>
