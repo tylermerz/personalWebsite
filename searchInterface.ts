@@ -1,28 +1,17 @@
 import * as pg from 'pg';
-let config = {
-    username: process.env.username,
-    database: process.env.database,
-    host: process.env.host,
-    port: 5432,
-    idelTimeoutMillis: 30000,
-};
-
-if (!config['username']){
-    config = require("./config"); 
-} 
-
 export class searchInterface {
     query:string;
     searchData:Object;
-
+    config:string;
     constructor(query:string) {
         this.query = query;
         this.searchData= {};
+        this.config = process.env.DATABASE_URL;
     }
 
     searchTags():Promise<Object> {
         return new Promise((resolve,reject) =>{
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -46,7 +35,7 @@ export class searchInterface {
     }
     searchPosts():Promise<Object> {
         return new Promise((resolve,reject) =>{
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -73,7 +62,7 @@ export class searchInterface {
     }
     searchStaticContent():Promise<Object> {
         return new Promise((resolve,reject) =>{
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
 
             let query = client.query('SELECT DISTINCT tag FROM tags where tag = $1', [this.query], (err, result) => {

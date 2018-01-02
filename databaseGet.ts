@@ -1,16 +1,5 @@
 import * as pg from 'pg';
 const crypto = require('crypto');
-let config = {
-    username: process.env.username,
-    database: process.env.database,
-    host: process.env.host,
-    port: 5432,
-    idelTimeoutMillis: 30000,
-};
-
-if (!config['username']){
-    config = require("./config"); 
-} 
 
 export class postAdder {
     config: Object = {};
@@ -19,13 +8,13 @@ export class postAdder {
 
     constructor(userID: number) {
         this.userID = userID;
-        this.config = config;
+        this.config = process.env.DATABASE_URL;
     };
 
     addPost(data: Object): Promise<Object> {
         return new Promise((resolve, reject) => {
 
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);            
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -62,7 +51,7 @@ export class userGetter {
 
     constructor(userID: number) {
         this.userID = userID;
-        this.config = config;
+        this.config = process.env.DATABASE_URL;
     };
     verifyUser(username: string, password: string): Promise<boolean> {
         return new Promise((resolve, reject) => {
@@ -85,8 +74,7 @@ export class userGetter {
 
     getUserPassInfo(username: string): Promise<Object> {
         return new Promise((resolve, reject) => {
-
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -111,8 +99,7 @@ export class userGetter {
 
     getUser(): Promise<Object> {
         return new Promise((resolve, reject) => {
-
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -146,12 +133,12 @@ export class blogPostGetter {
 
     constructor(postID: number) {
         this.postID = postID;
-        this.config = config;
+        this.config = process.env.DATABASE_URL;
     };
 
     getTags(): Promise<Object> {
         return new Promise((resolve, reject) => {
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -195,7 +182,7 @@ export class blogPostGetter {
     getPost(): Promise<Object> {
         return new Promise((resolve, reject) => {
             //set up all of the variables and objects to make a query
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -238,13 +225,13 @@ export class blogPageGetter {
 
     constructor(pageNumber: number) {
         this.pageNumber = pageNumber;
-        this.config = config;
+        this.config = process.env.DATABASE_URL;
     };
 
     getTotalPages(): Promise<Array<Object>> {
         return new Promise((resolve, reject) => {
             //set up all of the variables and objects to make a query
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -274,7 +261,7 @@ export class blogPageGetter {
     getPage(): Promise<Array<Object>> {
         return new Promise((resolve, reject) => {
             //set up all of the variables and objects to make a query
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -329,7 +316,7 @@ export class blogPageGetter {
     getTagPage(tag: string): Promise<Array<Object>> {
         return new Promise((resolve, reject) => {
             //set up all of the variables and objects to make a query
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
@@ -363,7 +350,7 @@ export class blogPageGetter {
     getTotalTagPages(tag): Promise<Array<Object>> {
         return new Promise((resolve, reject) => {
             //set up all of the variables and objects to make a query
-            const client = new pg.Client(config);
+            const client = new pg.Client(this.config);
             client.connect();
             client.on('error', function (error) {
                 console.log(error);
